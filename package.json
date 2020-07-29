@@ -1,0 +1,31 @@
+{
+  "name": "wbf-verification-cui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nari19/wbf-verification-cui.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nari19/wbf-verification-cui/issues"
+  },
+  "homepage": "https://github.com/nari19/wbf-verification-cui#readme",
+  "dependencies": {
+    "eslint-config-airbnb": "^18.2.0",
+    "jsdom": "^16.3.0",
+    "request": "^2.88.2",
+    "typescript": "^3.9.7"
+  },
+  "devDependencies": {
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.0.5"
+  }
+}
