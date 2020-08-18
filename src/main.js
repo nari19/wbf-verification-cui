@@ -1,3 +1,5 @@
+import {data} from './data'
+
 const request = require('request')
 const { JSDOM } = require('jsdom')
 const input = require('fs').readFileSync('/dev/stdin', 'utf8')
@@ -20,14 +22,33 @@ request(sampleData[input.slice(0,-1)], (e, response, body) => {
   try {
     const dom = new JSDOM(body)
     const scriptTagData = dom.window.document.getElementsByTagName("script")
+    
+    // 取得
     const resultLink = [...Array(scriptTagData.length)]
       .map( (_, i) => scriptTagData[i].getAttribute("src") )
       .filter(v => v)
-      .map(v => v.slice(0, 2)=="//" ? v.slice(2, v.length) : v)
-      .join('\n')
-    resultLink.split('\n').forEach(
-      (v,i) => console.log(`${i}. ${v}\n`)
+      .map(v => v.slice(0, 1)=="/" ? v.slice(1) : v)
+      .map(v => v.slice(0, 2)=="//" ? v.slice(2) : v)
+      .map(v => v.slice(0, 7)=="http://" ? v.slice(7) : v)
+      .map(v => v.slice(0, 8)=="https://" ? v.slice(8) : v)
+
+    // 整形
+    const domainPattern = /^([A-Za-z0-9][A-Za-z0-9\-]{1,61}[A-Za-z0-9]\.)+[A-Za-z]+/
+    const resultActiveLink = resultLink.filter(
+      v => domainPattern.test(v.slice(0, v.indexOf("/")))
     )
+
+    // 表示
+   // console.log(`\n----- resultLink ----`)
+   // resultLink.forEach(
+   //   (v,i) => console.log(`${i}. ${v}\n`)
+   // )
+   // console.log(`\n\n`)
+   // console.log(`----- resultActiveLink ----`)
+   // resultActiveLink.forEach(
+   //   (v,i) => console.log(`${i}. ${v}\n`)
+   // )
+   console.log(aaa)
   } catch (e) {
     console.error(e)
   }
