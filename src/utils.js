@@ -35,7 +35,7 @@ exports.tpsBody = async (link, input, length) => {
 
   await request(`http://${link}`).then( code => {
     // 書き込み
-    fs.writeFile(`${input}_a_${length}.txt`, code, err => {
+    fs.appendFile(`${input}_a_${length}.txt`, code, err => {
       if (err) throw err;
       console.log('正常に書き込みが完了しました');
     })
