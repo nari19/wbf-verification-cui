@@ -24,8 +24,7 @@ exports.getWbfLists = async num => {
         return domainPattern.test(domainName)
       })
     )
-  })
-  .catch( err => console.error(err))
+  }).catch( err => console.error(err))
   return resultActiveLink 
 }
 

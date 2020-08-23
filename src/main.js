@@ -1,7 +1,10 @@
-const utils = require('./utils')
-const input = require('fs').readFileSync('/dev/stdin', 'utf8').slice(0,-1)
+(async input => {
+  const utils = require('./utils')
+  
+  // third-party-siteのURLを取得した後、ソースコードをファイルに書き込む
+  await utils.getWbfLists(input).then( links =>
+    utils.writeScriptCode( links, input)
+  )
+  console.log("* finish!!")
 
-// third-party-siteのURLを取得した後、ソースコードをファイルに書き込む
-utils.getWbfLists(input).then( links =>
-  utils.writeScriptCode( links, input)
-)
+})(require('fs').readFileSync('/dev/stdin', 'utf8').slice(0,-1))
