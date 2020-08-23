@@ -1,5 +1,5 @@
 // webサイトのリンクからサードパーティサイトのリンクを抽出
-exports.domRequest = async num => {
+exports.getWbfLists = async num => {
   const request = require('request-promise')
   const _data = require('./_data')
   const resultActiveLink = []
@@ -19,7 +19,10 @@ exports.domRequest = async num => {
     // 整形
     const domainPattern = /^([A-Za-z0-9][A-Za-z0-9\-]{1,61}[A-Za-z0-9]\.)+[A-Za-z]+/
     resultActiveLink.push(
-      ...resultLink.filter( v => domainPattern.test(v.slice(0, v.indexOf("/"))) )
+      ...resultLink.filter( v => {
+        const domainName = v.slice(0, v.indexOf("/"))
+        return domainPattern.test(domainName)
+      })
     )
   })
   .catch( err => console.error(err))
@@ -29,15 +32,23 @@ exports.domRequest = async num => {
 
 // サードパーティサイトのソースコードを取得
 // また、テキストファイルに書き込む
-exports.tpsBody = async (link, input, length) => {
+exports.writeScriptCode = (links, input) => {
   const request = require('request-promise')
   const fs = require("fs");
+  const savePath = `./src/assets/${input}_a_${links.length}.txt`
 
-  await request(`http://${link}`).then( code => {
-    // 書き込み
-    fs.appendFile(`${input}_a_${length}.txt`, code, err => {
-      if (err) throw err;
-      console.log('正常に書き込みが完了しました');
+  try {
+    fs.statSync(savePath)
+    console.log(`* The file already exists...`);
+  } catch {
+    links.forEach( async link => {
+      await request(`http://${link}`).then( code => {
+        // 書き込み
+        fs.appendFile(savePath, code, err => {
+          if (err) throw err;
+          console.log(`* Success!! | ${link.slice(0, 25)}...`);
+        })
+      }).catch( err => console.error(err))
     })
-  }).catch( err => console.error(err))
+  }
 }
