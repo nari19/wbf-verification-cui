@@ -1,3 +1,4 @@
+// webサイトのリンクからサードパーティサイトのリンクを抽出
 exports.domRequest = async num => {
   const request = require('request-promise')
   const _data = require('./_data')
@@ -23,4 +24,20 @@ exports.domRequest = async num => {
   })
   .catch( err => console.error(err))
   return resultActiveLink 
+}
+
+
+// サードパーティサイトのソースコードを取得
+// また、テキストファイルに書き込む
+exports.tpsBody = async (link, input, length) => {
+  const request = require('request-promise')
+  const fs = require("fs");
+
+  await request(`http://${link}`).then( code => {
+    // 書き込み
+    fs.writeFile(`${input}_a_${length}.txt`, code, err => {
+      if (err) throw err;
+      console.log('正常に書き込みが完了しました');
+    })
+  }).catch( err => console.error(err))
 }

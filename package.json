@@ -17,16 +17,9 @@
   },
   "homepage": "https://github.com/nari19/wbf-verification-cui#readme",
   "dependencies": {
-    "eslint-config-airbnb": "^18.2.0",
     "jsdom": "^16.3.0",
     "request": "^2.88.2",
-    "request-promise": "^4.2.6",
-    "typescript": "^3.9.7"
+    "request-promise": "^4.2.6"
   },
-  "devDependencies": {
-    "eslint": "^7.5.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.0.5"
-  }
+  "devDependencies": {}
 }

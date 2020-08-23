@@ -1,12 +1,10 @@
 const utils = require('./utils')
-const input = require('fs').readFileSync('/dev/stdin', 'utf8')
+const input = require('fs').readFileSync('/dev/stdin', 'utf8').slice(0,-1)
 
-// 表示
-utils.domRequest(input.slice(0,-1)).then(
-  result => {
-    console.log(`\n----- All Of Link ----`)
-    result.forEach( (v,i) => console.log(`${i}. ${v}\n`) )
-    console.log(`\n\n----- Only Active Link ----`)
-    result.forEach( (v,i) => console.log(`${i}. ${v}\n`) )
-  }
+// third-party-siteのURLを取得
+utils.domRequest(input).then( links =>
+  // third-party-siteのコードをファイルに書き込む
+  links.forEach( async (link, _, array) => 
+    await utils.tpsBody( link, input, array.length)
+  )
 )
