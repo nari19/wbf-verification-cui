@@ -43,10 +43,8 @@ exports.writeScriptCode = (links, input) => {
     links.forEach( async link => {
       await request(`http://${link}`).then( code => {
         // 書き込み
-        fs.appendFile(savePath, code, err => {
-          if (err) throw err;
-          console.log(`* Success!! | ${link.slice(0, 25)}...`);
-        })
+        fs.appendFileSync(savePath, code)
+        console.log(`* Success!! | ${link.slice(0, 25)}...`)
       }).catch( err => console.error(err))
     })
   }
