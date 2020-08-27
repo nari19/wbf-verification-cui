@@ -33,7 +33,7 @@ exports.getWbfLists = async num => {
 // また、テキストファイルに書き込む
 exports.writeScriptCode = (links, input) => {
   const request = require('request-promise')
-  const fs = require("fs");
+  const fs = require("fs").promises;
   const savePath = `./src/assets/${input}_a_${links.length}.txt`
 
   try {
@@ -41,9 +41,9 @@ exports.writeScriptCode = (links, input) => {
     console.log(`* The file already exists...`);
   } catch {
     links.forEach( async link => {
-      await request(`http://${link}`).then( code => {
+      await request("http://"+`${link}`).then( code => {
         // 書き込み
-        fs.appendFileSync(savePath, code)
+        fs.appendFile(savePath, code)
         console.log(`* Success!! | ${link.slice(0, 25)}...`)
       }).catch( err => console.error(err))
     })
