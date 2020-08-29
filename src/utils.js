@@ -1,10 +1,10 @@
 // webサイトのリンクからサードパーティサイトのリンクを抽出
 exports.getWbfLists = async num => {
   const request = require('request-promise')
-  const _data = require('./_data')
+  const linkList = require('./_data').linkList
   const resultActiveLink = []
 
-  await request(_data.linkList[num]).then( htmlString => {
+  await request(linkList[num]).then( htmlString => {
     const { JSDOM } = require('jsdom')
     const dom = new JSDOM(htmlString)
     const scriptTagData = dom.window.document.getElementsByTagName("script")
@@ -29,23 +29,35 @@ exports.getWbfLists = async num => {
 }
 
 
-// サードパーティサイトのソースコードを取得
-// また、テキストファイルに書き込む
-exports.writeScriptCode = (links, input) => {
+exports.writeScriptCode = links => {
   const request = require('request-promise')
-  const fs = require("fs").promises;
-  const savePath = `./src/assets/${input}_a_${links.length}.txt`
+  const wbfProperty = require('./_data').wbfProperty
+  
+  // 取得されるWBFの詳細を表示
+  const showWbfDetails = code => {
+    let wbfCodeList = code.split(";")
+    Object.keys(wbfProperty).forEach( key => {
+      let targetCodeList = wbfCodeList.filter( v =>
+        // v.includes(wbfProperty.key["name"])
+        v.includes(wbfProperty[key].name)
+      )
+      if(targetCodeList.length){
+        console.log(`* ${key} | ${targetCodeList.length}`)
+      }
+    })
+    console.log(`\n`)
+  }
 
   try {
     fs.statSync(savePath)
     console.log(`* The file already exists...`);
   } catch {
     links.forEach( async link => {
+      // 3rd-Party上のスクリプトファイルを取得
       await request("http://"+`${link}`).then( code => {
-        // 書き込み
-        fs.appendFile(savePath, code)
-        console.log(`* Success!! | ${link.slice(0, 25)}...`)
-      }).catch( err => console.error(err))
+        console.log(`--- ${link.slice(0,25)}... ---`)
+        showWbfDetails(code) // WBF探索
+      }).catch( err => console.error(err) )
     })
   }
 }
