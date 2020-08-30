@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/nari19/wbf-verification-cui#readme",
   "dependencies": {
+    "colors": "^1.4.0",
     "jsdom": "^16.3.0",
     "request": "^2.88.2",
     "request-promise": "^4.2.6"

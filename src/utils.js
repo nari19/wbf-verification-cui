@@ -1,10 +1,9 @@
 // webサイトのリンクからサードパーティサイトのリンクを抽出
-exports.getWbfLists = async num => {
+exports.getWbfLists = async target => {
   const request = require('request-promise')
-  const linkList = require('./_data').linkList
   const resultActiveLink = []
 
-  await request(linkList[num]).then( htmlString => {
+  await request(target).then( htmlString => {
     const { JSDOM } = require('jsdom')
     const dom = new JSDOM(htmlString)
     const scriptTagData = dom.window.document.getElementsByTagName("script")
@@ -29,35 +28,57 @@ exports.getWbfLists = async num => {
 }
 
 
-exports.writeScriptCode = links => {
+exports.getWbfDetails = (links, weight, target, saveLog) => {
   const request = require('request-promise')
   const wbfProperty = require('./_data').wbfProperty
-  
+  const fs = require("fs").promises
+  const wbfCalc = []
+
+  // 出力文字の列をスペースで揃える
+  const mySpace = (num, str) => {
+    return [...Array(num - str.length)].map(()=>" ").join("")
+  } 
   // 取得されるWBFの詳細を表示
-  const showWbfDetails = code => {
-    let wbfCodeList = code.split(";")
+  const showWbfDetails = (wbfCodeList, weight) => {
+    wbfCalc.push([])
     Object.keys(wbfProperty).forEach( key => {
+      // 関係のないコードは除く
       let targetCodeList = wbfCodeList.filter( v =>
-        // v.includes(wbfProperty.key["name"])
         v.includes(wbfProperty[key].name)
       )
+      // 表示・計算
       if(targetCodeList.length){
-        console.log(`* ${key} | ${targetCodeList.length}`)
+	let len = targetCodeList.length
+	let wKey = wbfProperty[key]
+	let wName = wKey.name
+	let ta = ((weight * wKey.e)+((1-weight) * wKey.d))*len
+	// 配列の末端にTAを格納
+	wbfCalc.slice(-1)[0].push(ta)
+        console.log(`* ${len} | ${key}${mySpace(5,key)}: ${wName}`)
       }
     })
-    console.log(`\n`)
   }
+  	
+  links.forEach( async (link, _i) => {
+    // 3rd-Party上のスクリプトファイルを取得
+    await request("http://"+`${link}`).then( code => {
+      console.log(`\n--- ${link.slice(0, link.indexOf("/"))} ---`.green)
+      // WBF探索
+      showWbfDetails(code.split(";"), weight)
+      // 出力: TA
+      let sumTA = wbfCalc.slice(-1)[0].reduce((a,x) => a+=x, 0)
+      console.log(`[TA: ${sumTA}]`.cyan)
+    }).catch( err => console.error(err) )
 
-  try {
-    fs.statSync(savePath)
-    console.log(`* The file already exists...`);
-  } catch {
-    links.forEach( async link => {
-      // 3rd-Party上のスクリプトファイルを取得
-      await request("http://"+`${link}`).then( code => {
-        console.log(`--- ${link.slice(0,25)}... ---`)
-        showWbfDetails(code) // WBF探索
-      }).catch( err => console.error(err) )
-    })
-  }
+    if(links.slice(-1)[0] == links[_i]) {
+      setTimeout(()=>{
+        // 総トラッキング力(ATAS)の表示
+        let atas = wbfCalc.flat().reduce((a,x)=> a+=x, 0)
+        console.log(`\n => ATAS: ${atas}`.red)
+	// テキストファイルにログを書き込む
+        fs.appendFile( saveLog, `${atas}${mySpace(7,String(atas))} ${target}\n` )
+      }, 1000)
+    }
+  })
+
 }
