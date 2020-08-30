@@ -1,4 +1,4 @@
-// 入力用関数
+// ----------- 入力用関数 ----------- 
 exports.readUserInput = question => {
   const readline = require('readline').createInterface({
     input: process.stdin,
@@ -13,8 +13,13 @@ exports.readUserInput = question => {
   })
 }
 
+// ----------- 指定した数だけ文字列を繰り返す ----------- 
+exports.repeatStr = (num, str) => {
+  return [...Array(num)].map(()=>`${str}`).join("")
+} 
 
-// webサイトのリンクからサードパーティサイトのリンクを抽出
+
+//  ----------- サードパーティサイトのリンクを抽出 ----------- 
 exports.getWbfLists = async target => {
   const request = require('request-promise')
   const resultActiveLink = []
@@ -44,7 +49,8 @@ exports.getWbfLists = async target => {
 }
 
 
-exports.getWbfDetails = (links, weight, target, saveLog) => {
+//  ----------- TAを求め、ログの書き込みを行う ----------- 
+exports.getWbfDetails = (links, weight, target, savePath) => {
   const request = require('request-promise')
   const wbfProperty = require('./_data').wbfProperty
   const fs = require("fs").promises
@@ -92,7 +98,7 @@ exports.getWbfDetails = (links, weight, target, saveLog) => {
         let atas = wbfCalc.flat().reduce((a,x)=> a+=x, 0)
         console.log(`\n => ATAS: ${atas}`.red)
 	// テキストファイルにログを書き込む
-        fs.appendFile( saveLog, `${atas}${mySpace(7,String(atas))} ${target}\n` )
+        fs.appendFile( savePath, `${atas}${mySpace(7,String(atas))} ${target}\n` )
       }, 1000)
     }
   })
