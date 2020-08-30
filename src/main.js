@@ -1,36 +1,63 @@
 require('colors');
-const getWbfLists = require('./utils').getWbfLists;
-const getWbfDetails = require('./utils').getWbfDetails;
-const linkList = require('./_data').linkList;
 const fs = require("fs")
+const linkList = require('./_data').linkList;
+
+const utils = require("./utils")
+const getWbfDetails = utils.getWbfDetails;
+const getWbfLists = utils.getWbfLists;
+const readUserInput = utils.readUserInput;
+
+const dirPath = "/home/kazuki/Document/remote-file/wbf-verification-cui/"
+const savePath = dirPath + "src/assets/log.txt";
+const startLog = "( URL / a,b,c... / 'log' / 'clean' / 'exit' )"
 const weight = 0.75;
-const saveLog = "./src/assets/log.txt";
 
-(async input =>{
-  if(input=="clean") {
-    fs.readFile( saveLog, "utf-8", (err, data) => {
-      if(err) throw err;
-      console.log(data)
-    })
-    // 重複をなくす
-    // ATASごとにソート
-  
-  } else if(input=="log") {
-    fs.readFile( saveLog, "utf-8", (err, data) => {
-      if(err) throw err;
-      console.log("") // 改行
-      data.split("\n").forEach( (v,i) => {
-	let vs = v.split(" ")
-	let sp = [...Array(7-vs[0].length)].map(()=>" ").join("")
-        process.stdout.write(`${vs[0]}`.green)
-        process.stdout.write(sp)
-        console.log(vs.slice(-1)[0])
+const mySpace = (num, str) => {
+  return [...Array(num)].map(()=>`${str}`).join("")
+} 
+
+console.log(startLog.gray);
+(async () => {
+  while (true) {
+    let input = await readUserInput('');
+
+    // ----------- logの表示 ----------- 
+    if(input=="log") {
+      fs.readFile( savePath, "utf-8", (err, data) => {
+        if(err) throw err;
+        console.log(`\n ATAS  | ${mySpace(20," ")} URL`)
+        console.log(mySpace(80,"~").white)
+        data.split("\n").forEach( (v,i) => {
+          let vs = v.split(" ")
+          let sp = mySpace((7-vs[0].length)," ")
+          process.stdout.write(`${vs[0]}`.green)
+          process.stdout.write( sp + "|  ")
+          console.log(vs.slice(-1)[0].slice(0, 70))
+        })
       })
-    })
-
-  } else {
-    const target = input.length==1 ? linkList[input] : input
-    const links = await getWbfLists(target)
-    const result = await getWbfDetails(links, weight, target, saveLog)
-  }
-})(require('fs').readFileSync('/dev/stdin', 'utf8').slice(0,-1))
+    
+    //  ----------- ソート・重複削除 ----------- 
+    } else if(input=="clean") {
+      fs.readFile( savePath, "utf-8", (err, data) => {
+        if(err) throw err;
+        console.log(data)
+      })
+    
+    //  ----------- Enter => ----------- 
+    } else if(input=="") {
+      console.log(`\n${[...Array(50)].map(()=>">").join("")}`)
+      console.log(startLog.grey);
+    
+    //  ----------- 終了 ----------- 
+    } else if(input=="exit") {
+      break;
+    
+    //  ----------- WBF探索 ----------- 
+    } else {
+      const target = (input.length==1 ? linkList[input] : input)
+      getWbfLists(target).then(
+        links => getWbfDetails(links, weight, target, savePath)
+      )
+    } 
+  } 
+})();

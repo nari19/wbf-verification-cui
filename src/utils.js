@@ -1,3 +1,19 @@
+// 入力用関数
+exports.readUserInput = question => {
+  const readline = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+  })
+
+  return new Promise((resolve, reject) => {
+    readline.question(question, (answer) => {
+      resolve(answer)
+      readline.close()
+    })
+  })
+}
+
+
 // webサイトのリンクからサードパーティサイトのリンクを抽出
 exports.getWbfLists = async target => {
   const request = require('request-promise')
