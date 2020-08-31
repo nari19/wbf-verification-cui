@@ -64,7 +64,7 @@ exports.getWbfDetails = (links, weight, target, savePath) => {
   const showWbfDetails = (wbfCodeList, weight) => {
     wbfCalc.push([])
     Object.keys(wbfProperty).forEach( key => {
-      // 関係のないコードは除く
+      // wbfを取得していないコードは配列から除く
       let targetCodeList = wbfCodeList.filter( v =>
         v.includes(wbfProperty[key].name)
       )
@@ -86,7 +86,7 @@ exports.getWbfDetails = (links, weight, target, savePath) => {
     await request("http://"+`${link}`).then( code => {
       console.log(`\n--- ${link.slice(0, link.indexOf("/"))} ---`.green)
       // WBF探索
-      showWbfDetails(code.split(";"), weight)
+      showWbfDetails(code.split(/;|\n/), weight)
       // 出力: TA
       let sumTA = wbfCalc.slice(-1)[0].reduce((a,x) => a+=x, 0)
       console.log(`[TA: ${sumTA}]`.cyan)
@@ -96,9 +96,11 @@ exports.getWbfDetails = (links, weight, target, savePath) => {
       setTimeout(()=>{
         // 総トラッキング力(ATAS)の表示
         let atas = wbfCalc.flat().reduce((a,x)=> a+=x, 0)
-        console.log(`\n => ATAS: ${atas}`.red)
+        console.log(`\n=> ATAS: ${atas}`.red)
 	// テキストファイルにログを書き込む
-        fs.appendFile( savePath, `${atas}${mySpace(7,String(atas))} ${target}\n` )
+        if(target){
+          fs.appendFile( savePath, `${atas}${mySpace(7,String(atas))} ${target}\n` )
+        }
       }, 1000)
     }
   })

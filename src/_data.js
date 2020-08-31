@@ -1,14 +1,14 @@
 exports.linkList = {
-  'a': 'https://bestpresent.jp/ties/ties_armani/',
-  'd': 'https://wired.jp/2020/05/06/which-macbook-should-you-buy/',
-  'f': 'http://www.shopping-kurosawagakki.com/shopbrand/ct671/',
-  'i': 'https://tenki.jp/suppl/emi_iwaki/2015/07/26/5521.html',
-  'j': '',
-  'b': '',
-  'c': '',
-  'e': '',
-  'g': '',
-  'h': ''
+  'a': 'https://peraichi.com/univ/%E3%82%A2%E3%83%95%E3%82%A3%E3%83%AA%E3%82%A8%E3%82%A4%E3%83%88%E3%81%AE%E5%A7%8B%E3%82%81%E6%96%B9%E3%82%84%E7%A8%BC%E3%81%8E%E6%96%B9%E3%80%81%E7%84%A1%E6%96%99%E3%83%96%E3%83%AD%E3%82%B0%E3%82%84',
+  'b': 'https://tenki.jp/suppl/emi_iwaki/2015/07/26/5521.html',
+  'c': 'https://maku77.github.io/nodejs/io/readline-from-keyboard.html',
+  'd': 'https://tenki.jp/suppl/emi_iwaki/2015/07/26/5521.html',
+  'e': 'http://www.shopping-kurosawagakki.com/shopbrand/ct671/',
+  'f': 'https://arne.media/news/22792/',
+  'g': 'https://arne.media/news/22792/',
+  'h': 'https://wired.jp/2020/05/06/which-macbook-should-you-buy/<Paste>',
+  'i': 'https://www.kagoya.jp/howto/webhomepage/affiliate-01/',
+  'j': 'https://www.kagoya.jp/howto/webhomepage/affiliate-01/'
 }
 
 exports.wbfProperty = {

@@ -10,7 +10,7 @@ const repeatStr = utils.repeatStr;
 
 const dirPath = "/home/kazuki/Document/remote-file/wbf-verification-cui/"
 const savePath = dirPath + "src/assets/log.txt";
-const startLog = "( URL / a,b,c... / 'log' / 'sort' / 'exit' )"
+const startLog = "( URL / a,b,c... / 'log' / 'sort' / 'js' / 'exit' )"
 const weight = 0.75;
 
 
@@ -23,12 +23,12 @@ console.log(startLog.gray);
     if(input=="log") {
       fs.readFile( savePath, "utf-8", (err, data) => {
         if(err) throw err;
-        console.log(`\n ATAS  | ${repeatStr(20," ")} URL`)
+        console.log(`\n  ATAS  | ${repeatStr(20," ")} URL`)
         console.log(repeatStr(80,"~"))
         data.split("\n").forEach( (v,i) => {
           let vs = v.split(" ")
           let sp = repeatStr((7-vs[0].length)," ")
-          process.stdout.write(`${vs[0]}`.green)
+          process.stdout.write(` ${vs[0]}`.green)
           process.stdout.write( sp + "|  ")
           console.log(vs.slice(-1)[0].slice(0, 70))
         })
@@ -51,9 +51,18 @@ console.log(startLog.gray);
 	})
         fs.writeFile(savePath, slimedData.join('\n'), ()=>{
 	  if(err) throw err
-	  console.log("Removed duplicate.".green)
+	  console.log('Removed duplicate.\n'.green)
 	})
       })
+    
+    //  ----------- スクリプトファイルを直接調べる ----------- 
+    } else if(input=="js") {
+      let input_js = await readUserInput('URL: ');
+      if (input_js.slice(0, 1)=="/") input_js = input_js.slice(1)
+      if (input_js.slice(0, 2)=="//") input_js = input_js.slice(2)
+      if (input_js.slice(0, 7)=="http://") input_js = input_js.slice(7)
+      if (input_js.slice(0, 8)=="https://") input_js = input_js.slice(8)
+      getWbfDetails([input_js], weight, "", savePath)
     
     //  ----------- Enter => ----------- 
     } else if(input=="") {
@@ -68,9 +77,16 @@ console.log(startLog.gray);
     //  ----------- WBF探索 ----------- 
     } else {
       const target = (input.length==1 ? linkList[input] : input)
-      getWbfLists(target).then(
-        links => getWbfDetails(links, weight, target, savePath)
-      )
+      if (input.length == 1){
+        const target = linkList[input]
+        console.log(target)
+      } else {
+        const target = input
+      }
+      getWbfLists(target).then( links => {
+        if(links.length){ getWbfDetails(links, weight, target, savePath) }
+        else { console.log('=> 3rd-party script is not found.'.red)}
+      })
     } 
   } 
 })();
