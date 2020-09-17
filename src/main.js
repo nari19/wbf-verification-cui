@@ -24,10 +24,13 @@ console.log(startLog.gray);
         if(err) throw err;
         console.log(`\n  ATAS  | ${repeatStr(20," ")} URL`)
         console.log(repeatStr(80,"~"))
-        data.split("\n").forEach( (v,i) => {
+        data.split("\n").slice(0,-1).forEach( (v,i) => {
           let vs = v.split(" ")
+          let pt = ` ${vs[0]}`
           let sp = repeatStr((7-vs[0].length)," ")
-          process.stdout.write(` ${vs[0]}`.green)
+          process.stdout.write(
+            vs[0]>=40 ? pt.red : (vs[0]>=10 ? pt.green : pt.cyan)
+          )
           process.stdout.write( sp + "|  ")
           console.log(vs.slice(-1)[0].slice(0, 70))
         })
