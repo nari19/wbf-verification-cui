@@ -83,7 +83,7 @@ exports.getWbfDetails = (links, weight, target, savePath) => {
   	
   links.forEach( async (link, _i) => {
     // 3rd-Party上のスクリプトファイルを取得
-    await request("http://"+`${link}`).then( code => {
+    await request("http://"+link).then( code => {
       console.log(`\n--- ${link.slice(0, link.indexOf("/"))} ---`.green)
       // WBF探索
       showWbfDetails(code.split(/;|\n/), weight)
@@ -95,12 +95,11 @@ exports.getWbfDetails = (links, weight, target, savePath) => {
     if(links.slice(-1)[0] == links[_i]) {
       setTimeout(()=>{
         // 総トラッキング力(ATAS)の表示
-        let atas = wbfCalc.flat().reduce((a,x)=> a+=x, 0)
+        const atas = wbfCalc.flat().reduce((a,x)=> a+=x, 0)
         console.log(`\n=> ATAS: ${atas}`.red)
 	    // テキストファイルにログを書き込む
-        if(target){
-          fs.appendFile( savePath, `${atas}${mySpace(7,String(atas))} ${target}\n` )
-        }
+        const textLog = `${atas}${mySpace(7,String(atas))} ${target}\n`
+        if(target) fs.appendFile( savePath, textLog)
       }, 1000)
     }
   })
