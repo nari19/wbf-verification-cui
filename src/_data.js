@@ -12,7 +12,7 @@ exports.linkList = {
 }
 
 exports.wbfProperty = {
-  x0:    {name:"navigator.plugins", drt:3, etp:1},
+  x0:    {name:"navigator.plugins", d:3, e:1},
   x1:    {name:"navigator.appName", d:1,e:3},
   x2:    {name:"navigator.appVersion", d:1,e:3},
   x3:    {name:"navigator.userAgent", d:3,e:1},

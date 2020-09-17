@@ -70,12 +70,12 @@ exports.getWbfDetails = (links, weight, target, savePath) => {
       )
       // 表示・計算
       if(targetCodeList.length){
-	let len = targetCodeList.length
-	let wKey = wbfProperty[key]
-	let wName = wKey.name
-	let ta = ((weight * wKey.e)+((1-weight) * wKey.d))*len
-	// 配列の末端にTAを格納
-	wbfCalc.slice(-1)[0].push(ta)
+  	    let len = targetCodeList.length
+  	    let wKey = wbfProperty[key]
+  	    let wName = wKey.name
+  	    let ta = ((weight * wKey.e)+((1-weight) * wKey.d))*len
+  	    // 配列の末端にTAを格納
+  	    wbfCalc.slice(-1)[0].push(ta)
         console.log(`* ${len} | ${key}${mySpace(5,key)}: ${wName}`)
       }
     })
@@ -97,7 +97,7 @@ exports.getWbfDetails = (links, weight, target, savePath) => {
         // 総トラッキング力(ATAS)の表示
         let atas = wbfCalc.flat().reduce((a,x)=> a+=x, 0)
         console.log(`\n=> ATAS: ${atas}`.red)
-	// テキストファイルにログを書き込む
+	    // テキストファイルにログを書き込む
         if(target){
           fs.appendFile( savePath, `${atas}${mySpace(7,String(atas))} ${target}\n` )
         }
