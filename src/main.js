@@ -60,10 +60,12 @@ console.log(startLog.gray);
     //  ----------- スクリプトファイルを直接調べる ----------- 
     } else if(input=="js") {
       let input_js = await readUserInput('URL: ');
-      if (input_js.slice(0, 1)=="/") input_js = input_js.slice(1)
-      if (input_js.slice(0, 2)=="//") input_js = input_js.slice(2)
-      if (input_js.slice(0, 7)=="http://") input_js = input_js.slice(7)
-      if (input_js.slice(0, 8)=="https://") input_js = input_js.slice(8)
+      [[2,"//"], [1,"/"], [7,"http://"], [8,"https://"]].some( v => {
+        if (input_js.slice(0, v[0]) == v[1]) {
+          input_js = input_js.slice(v[0])
+          return true
+        }
+      })
       getWbfDetails([input_js], weight, "", savePath)
     
     //  ----------- Enter => ----------- 
