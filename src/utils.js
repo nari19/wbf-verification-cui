@@ -52,7 +52,7 @@ exports.getWbfLists = async target => {
 //  ----------- TAを求め、ログの書き込みを行う ----------- 
 exports.getWbfDetails = (links, weight, target, savePath) => {
   const request = require('request-promise')
-  const wbfProperty = require('./_data').wbfProperty
+  const wbfProperty = require('./_data').wbfProperty2
   const fs = require("fs").promises
   const wbfCalc = []
 

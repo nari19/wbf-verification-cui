@@ -25,9 +25,11 @@
 4.5     https://www.familyset.jp/column/%E3%83%A1%E3%82%BF%E3%83%9C%E3%82%92%E4%BA%88%E9%98%B2%E3%81%99%E3%82%8B%E7%94%9F%E6%B4%BB%E7%BF%92%E6%85%A3/
 4.5     https://www.iwate-pu.ac.jp/
 4.5     https://blog.goo.ne.jp/gekkan-io/e/e59e686b3fcd860b054eedb915392b7e
+3       https://hackersid.com/archive/team/banyumas-cyber-team-
 1.5     https://www.bloomberg.co.jp/news/articles/2020-08-28/QFRWU8T1UM1O01
 1       https://www.latelierdesparfums.jp/brands/dolce-gabbana
 0       https://mizuiku.suntory.jp/kids/study/n010.html
 0       https://twitter.com/home
 0       https://www.kenpo.gr.jp/sgh/contents/03hoken/tokutei/02/index.html
 0       https://nari19.me/
+3        https://hackersid.com/archive/team/banyumas-cyber-team-

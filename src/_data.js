@@ -11,7 +11,7 @@ exports.linkList = {
   'j': 'https://www.kagoya.jp/howto/webhomepage/affiliate-01/'
 }
 
-exports.wbfProperty = {
+const workBeforeImprove = {
   x0:    {name:"navigator.plugins", d:3, e:1},
   x1:    {name:"navigator.appName", d:1,e:3},
   x2:    {name:"navigator.appVersion", d:1,e:3},
@@ -20,15 +20,33 @@ exports.wbfProperty = {
   x5:    {name:"navigator.language", d:2,e:3},
   x6:    {name:"navigator.platform", d:1,e:1},
   x7:    {name:"navigator.appCodeName", d:1,e:3},
-  x8:    {name:"navigator.connection", d:1,e:3},
-  x9_a:  {name:"screen.height", d:2,e:2},
-  x9_b:  {name:"screen.width", d:2,e:2},
-  x10_a: {name:"screen.availHeight", d:2,e:2},
-  x10_b: {name:"screen.availWidth", d:2,e:2},
-  x11:   {name:"screen.colorDepth", d:2,e:2},
-  x12:   {name:"screen.pixielDepth", d:2,e:2},
-  x13:   {name:"getTimezoneOffset", d:3,e:1},
-  x14:   {name:"getFontList", d:3,e:1},
-  x15_a: {name:"toDataURL", d:3,e:1},
-  x15_b: {name:"getImageData", d:3,e:1}
+  x8_a:  {name:"screen.height", d:2,e:2},
+  x8_b:  {name:"screen.width", d:2,e:2},
+  x9_a:  {name:"screen.availHeight", d:2,e:2},
+  x9_b:  {name:"screen.availWidth", d:2,e:2},
+  x10:   {name:"screen.colorDepth", d:2,e:2},
+  x11:   {name:"screen.pixielDepth", d:2,e:2},
+  x12:   {name:"getTimezoneOffset", d:3,e:1},
+  x13:   {name:"getFontList", d:3,e:1},
+  x14_a: {name:"toDataURL", d:3,e:1},
+  x14_b: {name:"getImageData", d:3,e:1}
 }
+
+const workAfterImprove = {
+  x15:    {name:"navigator.connection", d:1,e:3},
+  x16:    {name:"navigator.browserLanguage", d:1,e:3},
+  x17:    {name:"navigator.systemLanguage", d:1,e:3},
+  x18:    {name:"navigator.deviceMemory", d:1,e:3},
+  x19:    {name:"navigator.hardwareConcurrency", d:1,e:3},
+  x20:    {name:"navigator.cpuClass", d:1,e:3},
+  x21:    {name:"navigator.doNotTrack", d:1,e:3},
+  x22:    {name:"navigator.msDoNotTrack", d:1,e:3},
+  x23:    {name:"navigator.maxTouchPoints", d:1,e:3},
+  x24:    {name:"navigator.msMaxTouchPoints", d:1,e:3},
+  x25:    {name:"navigator.oscpu", d:1,e:3},
+  x26:    {name:"navigator.platform.toLowerCase", d:1,e:3},
+  x27:    {name:"navigator.platform.productSub", d:1,e:3},
+}
+
+exports.wbfProperty = {...workBeforeImprove}
+exports.wbfProperty2 = {...workBeforeImprove, ...workAfterImprove}

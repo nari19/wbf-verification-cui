@@ -8,7 +8,7 @@ const getWbfLists = utils.getWbfLists;
 const readUserInput = utils.readUserInput;
 const repeatStr = utils.repeatStr;
 
-const savePath = "./src/assets/log.txt";
+const savePath = "./src/assets/log2.txt";
 const startLog = "( URL / a,b,c... / 'log' / 'sort' / 'js' / 'exit' )"
 const weight = 0.75;
 
