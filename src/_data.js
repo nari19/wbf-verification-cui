@@ -46,6 +46,16 @@ const workAfterImprove = {
   x25:    {name:"navigator.oscpu", d:1,e:3},
   x26:    {name:"navigator.platform.toLowerCase", d:1,e:3},
   x27:    {name:"navigator.platform.productSub", d:1,e:3},
+  x28:    {name:"window.define", d:1,e:3},
+  x29:    {name:"window.devicePixelRatio", d:1,e:3},
+  x30:    {name:"window.openDatabase", d:1,e:3},
+  x31:    {name:"window.ActiveXObject", d:1,e:3},
+  x32:    {name:"window.sessionStorage", d:1,e:3},
+  x33:    {name:"window.localStorage", d:1,e:3},
+  x34:    {name:"window.indexedDB", d:1,e:3},
+  x35:    {name:"window.doNotTrack", d:1,e:3},
+  x36:    {name:"window.WebGLRenderingContext", d:1,e:3},
+  x37:    {name:"window.swfobject", d:1,e:3},
 }
 
 exports.wbfProperty = {...workBeforeImprove}

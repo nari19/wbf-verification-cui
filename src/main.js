@@ -81,12 +81,6 @@ console.log(startLog.gray);
     //  ----------- WBF探索 ----------- 
     } else {
       const target = (input.length==1 ? linkList[input] : input)
-      if (input.length == 1){
-        const target = linkList[input]
-        console.log(target)
-      } else {
-        const target = input
-      }
       getWbfLists(target).then( links => {
         if(links.length){ getWbfDetails(links, weight, target, savePath) }
         else { console.log('=> 3rd-party script is not found.'.red)}
