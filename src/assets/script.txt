@@ -1,0 +1,6 @@
+94
+ct1.addthis.com/static/r07/core130.js 
+145
+cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/1.8.0/fingerprint2.min.js
+12
+pagead2.googlesyndication.com/pagead/js/adsbygoogle.js

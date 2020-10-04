@@ -8,7 +8,8 @@ const getWbfLists = utils.getWbfLists;
 const readUserInput = utils.readUserInput;
 const repeatStr = utils.repeatStr;
 
-const savePath = "./src/assets/log2.txt";
+const absPath = "/Users/nari19/Downloads/remote-folda/others/wbf-verification-cui";
+const savePath = absPath + "/src/assets/log2.txt";
 const startLog = "( URL / a,b,c... / 'log' / 'sort' / 'js' / 'exit' )"
 const weight = 0.75;
 
@@ -80,7 +81,8 @@ console.log(startLog.gray);
     
     //  ----------- WBF探索 ----------- 
     } else {
-      const target = (input.length==1 ? linkList[input] : input)
+      let target = (input.length==1 ? linkList[input] : input)
+      if(target.slice(0,4)!="http") target = "http://" + target
       getWbfLists(target).then( links => {
         if(links.length){ getWbfDetails(links, weight, target, savePath) }
         else { console.log('=> 3rd-party script is not found.'.red)}
