@@ -59,7 +59,7 @@ exports.getWbfDetails = (links, weight, target, savePath) => {
   // 出力文字の列をスペースで揃える
   const mySpace = (num, str) => {
     return [...Array(num - str.length)].map(()=>" ").join("")
-  } 
+  }
   // 取得されるWBFの詳細を表示
   const showWbfDetails = (wbfCodeList, weight) => {
     wbfCalc.push([])

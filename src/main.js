@@ -87,6 +87,6 @@ console.log(startLog.gray);
         if(links.length){ getWbfDetails(links, weight, target, savePath) }
         else { console.log('=> 3rd-party script is not found.'.red)}
       })
-    } 
+    }
   } 
 })();

@@ -2,5 +2,15 @@
 ct1.addthis.com/static/r07/core130.js 
 145
 cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/1.8.0/fingerprint2.min.js
+82.5
+https://cdnjs.cloudflare.com/ajax/libs/ClientJS/0.1.11/client.min.js
+29.5
+https://cdnjs.cloudflare.com/ajax/libs/fingerprintjs/0.5.3/fingerprint.min.js
 12
 pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
+55
+https://mc.yandex.ru/metrika/watch.js
+53.5
+https://mc.yandex.ru/metrika/watch.js
+92.5
+https://yummy.consumable.com/3384/cnsmbl-audio-728x90-slider/widget/iframe.js?cb=1513273960053
