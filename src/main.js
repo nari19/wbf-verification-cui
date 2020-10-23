@@ -2,7 +2,7 @@ require('colors');
 const fs = require("fs")
 const linkList = require('./_data').linkList;
 
-const utils = require("./utils")
+const utils = require("./_utils")
 const getWbfDetails = utils.getWbfDetails;
 const getWbfLists = utils.getWbfLists;
 const readUserInput = utils.readUserInput;
