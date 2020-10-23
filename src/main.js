@@ -2,9 +2,9 @@ require('colors');
 const fs = require("fs")
 const linkList = require('./_data').linkList;
 
-const utils = require("./_utils")
-const getWbfDetails = utils.getWbfDetails;
-const getWbfLists = utils.getWbfLists;
+const getWbfLists = require("./script/getLists").getWbfLists;
+const getWbfDetails = require("./script/getDetails").getWbfDetails;
+const utils = require("./script/utils")
 const readUserInput = utils.readUserInput;
 const repeatStr = utils.repeatStr;
 
