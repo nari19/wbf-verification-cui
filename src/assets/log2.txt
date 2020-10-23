@@ -38,3 +38,6 @@
 31      https://arne.media/news/22792/
 12.5    https://arne.media/news/22792/
 17.5    https://lohaco.jp/
+65.75   https://tenki.jp/suppl/emi_iwaki/2015/07/26/5521.html
+65.75   https://tenki.jp/suppl/emi_iwaki/2015/07/26/5521.html
+42      http://recruit.net
