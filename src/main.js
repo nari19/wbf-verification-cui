@@ -9,7 +9,8 @@ const readUserInput = utils.readUserInput;
 const repeatStr = utils.repeatStr;
 
 const absPath = "/Users/nari19/Downloads/remote-folda/others/wbf-verification-cui";
-const savePath = absPath + "/src/assets/log.txt";
+const savePath_atas = absPath + "/src/log/atas.txt";
+const savePath_ta = absPath + "/src/log/ta.txt";
 const startLog = "( URL / a,b,c... / 'log' / 'sort' / 'js' / 'exit' )"
 const weight = 0.75;
 
@@ -21,7 +22,7 @@ console.log(startLog.gray);
 
     // ----------- logの表示 ----------- 
     if(input=="log") {
-      fs.readFile( savePath, "utf-8", (err, data) => {
+      fs.readFile( savePath_atas, "utf-8", (err, data) => {
         if(err) throw err;
         console.log(`\n  ATAS  | ${repeatStr(20," ")} URL`)
         console.log(repeatStr(80,"~"))
@@ -39,7 +40,7 @@ console.log(startLog.gray);
     
     //  ----------- ソート・重複削除 ----------- 
     } else if(input=="sort") {
-      fs.readFile( savePath, "utf-8", (err, data) => {
+      fs.readFile( savePath_atas, "utf-8", (err, data) => {
         if(err) throw err;
 	    // ソート
 	    const sortedData = data.split('\n').sort( (a,b) => {
@@ -52,7 +53,7 @@ console.log(startLog.gray);
     	const slimedData = sortedData.filter( (x,i,self) => {
   	      return self.indexOf(x) === i
   	    })
-        fs.writeFile(savePath, slimedData.join('\n'), ()=>{
+        fs.writeFile(savePath_atas, slimedData.join('\n'), ()=>{
 	      if(err) throw err
 	      console.log('Removed duplicate.\n'.green)
 	    })
@@ -67,7 +68,7 @@ console.log(startLog.gray);
           return true
         }
       })
-      getWbfDetails([input_js], weight, "", savePath)
+      getWbfDetails([input_js], weight, "", savePath_ta)
     
     //  ----------- Enter => ----------- 
     } else if(input=="") {
@@ -84,7 +85,7 @@ console.log(startLog.gray);
       let target = (input.length==1 ? linkList[input] : input)
       if(target.slice(0,4)!="http") target = "http://" + target
       getWbfLists(target).then( links => {
-        if(links.length){ getWbfDetails(links, weight, target, savePath) }
+        if(links.length){ getWbfDetails(links, weight, target, savePath_atas) }
         else { console.log('=> 3rd-party script is not found.'.red)}
       })
     }

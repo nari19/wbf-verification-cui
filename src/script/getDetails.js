@@ -2,9 +2,12 @@
 //  ----------- TAを求め、ログの書き込みを行う ----------- 
 exports.getWbfDetails = (links, weight, target, savePath) => {
   const request = require('request-promise')
-  const wbfProperty = require('./_data').wbfProperty
   const fs = require("fs").promises
+  const oldProps = require('../_data').oldProps
+  const newProps = require('../_data').newProps
+    
   const wbfCalc = []
+  const wbfDiff = []
 
   // 出力文字の列をスペースで揃える
   const mySpace = (num, str) => {
@@ -13,19 +16,21 @@ exports.getWbfDetails = (links, weight, target, savePath) => {
   // 取得されるWBFの詳細を表示
   const showWbfDetails = (wbfCodeList, weight) => {
     wbfCalc.push([])
-    Object.keys(wbfProperty).forEach( key => {
+    Object.keys(newProps).forEach( (key, index) => {
       // wbfを取得していないコードは配列から除く
       let targetCodeList = wbfCodeList.filter( v =>
-        v.includes(wbfProperty[key].name)
+        v.includes(newProps[key].name)
       )
       // 表示・計算
       if(targetCodeList.length){
         let len = targetCodeList.length
-        let wKey = wbfProperty[key]
+        let wKey = newProps[key]
         let wName = wKey.name
         let ta = ((weight * wKey.e)+((1-weight) * wKey.d))*len
         // 配列の末端にTAを格納
         wbfCalc.slice(-1)[0].push(ta)
+        // 関連研究と提案内容の差分
+        if(Object.keys(oldProps).includes(key)) wbfDiff.push(ta)
         console.log(`* ${len} | ${key}${mySpace(5,key)}: ${wName}`)
       }
     })
@@ -47,10 +52,12 @@ exports.getWbfDetails = (links, weight, target, savePath) => {
       setTimeout(()=>{
         // 総トラッキング力(ATAS)の表示
         const atas = wbfCalc.flat().reduce((a,x)=> a+=x, 0)
-        console.log(`\n=> ATAS: ${atas}`.red)
+        const tas = wbfDiff.reduce((a,x)=> a+=x, 0)
+        console.log(`\n=> ATAS: ${atas} (${tas})`.red)
         // テキストファイルにログを書き込む
-        const textLog = `${atas}${mySpace(7,String(atas))} ${target}\n`
-        if(target) fs.appendFile( savePath, textLog)
+        const point = `${atas} ${mySpace(7, String(atas))} ${tas} ${mySpace(8, String(tas))}`
+        const textLog = target ? `${point} ${target}\n` : `${point} ${link}\n`
+        fs.appendFile( savePath, textLog)
       }, 1000)
     }
   })

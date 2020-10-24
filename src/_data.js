@@ -58,5 +58,5 @@ const workAfterImprove = {
   x36:    {name:"window.swfobject", d:2,e:1},
 }
 
-exports.wbfProperty = {...workBeforeImprove}
-exports.wbfProperty2 = {...workBeforeImprove, ...workAfterImprove}
+exports.oldProps = {...workBeforeImprove}
+exports.newProps = {...workBeforeImprove, ...workAfterImprove}
