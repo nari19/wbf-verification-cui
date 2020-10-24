@@ -1,10 +1,11 @@
-75.25   ct1.addthis.com/static/r07/core130.js 
-80.25   cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/1.8.0/fingerprint2.min.js
-82.25   cdnjs.cloudflare.com/ajax/libs/ClientJS/0.1.11/client.min.js
-29.5    cdnjs.cloudflare.com/ajax/libs/fingerprintjs/0.5.3/fingerprint.min.js
-9.75    pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
-18.5    mc.yandex.ru/metrika/watch.js
-18.5    mc.yandex.ru/metrika/watch.js
-95      yummy.consumable.com/3384/cnsmbl-audio-728x90-slider/widget/iframe.js?cb=1513273960053
 84.75    50.5      cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/2.1.4/fingerprint2.min.js
 82.25    75.5      cdnjs.cloudflare.com/ajax/libs/ClientJS/0.1.11/client.min.js
+75.25    54.25     ct1.addthis.com/static/r07/core130.js 
+80.25    46        cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/1.8.0/fingerprint2.min.js
+82.25    75.5      cdnjs.cloudflare.com/ajax/libs/ClientJS/0.1.11/client.min.js
+29.5     19.75     cdnjs.cloudflare.com/ajax/libs/fingerprintjs/0.5.3/fingerprint.min.js
+9.75     4.5       pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
+18.5     14.5      mc.yandex.ru/metrika/watch.js
+54.75    47.75     mc.yandex.ru/metrika/watch.js
+95       67.5      yummy.consumable.com/3384/cnsmbl-audio-728x90-slider/widget/iframe.js?cb=1513273960053
+21.5     11        flux-cdn.com/client/smartlog/flux_smartlog_HB.min.js

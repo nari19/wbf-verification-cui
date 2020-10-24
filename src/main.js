@@ -17,10 +17,10 @@ const savePath_ta = absPath + "/src/log/ta.txt";
 const startLog = "( URL / a,b,c... / 'log' / 'calc' / 'sort' / 'js' / 'exit' )"
 
 const threshold = {
-    tracker:   { fingerprintjs: [84.75, 50,5], clientjs: [82.25, 75.5]},
-    weight : 0.75,
-    low:    10,  
-    high:   70  
+    tracker: { fingerprintjs: [84.75, 50,5], clientjs: [82.25, 75.5]},
+    weight: 0.75,
+    low: 10,  
+    high: 70  
 }
 
 

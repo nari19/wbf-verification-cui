@@ -44,15 +44,19 @@ exports.getWbfDetails = (links, weight, target, savePath) => {
       showWbfDetails(code.split(/;|\n/), weight)
       // 出力: TA
       let sumTA = wbfCalc.slice(-1)[0].reduce((a,x) => a+=x, 0)
+      if(sumTA > 20) console.log(link.gray)
       console.log(`[TA: ${sumTA}]`.cyan)
     }).catch( err => console.error(err) )
 
     // ループ最後
     if(links.slice(-1)[0] == links[_i]) {
       setTimeout(()=>{
-        // 総トラッキング力(ATAS)の表示
-        const atas = wbfCalc.flat().reduce((a,x)=> a+=x, 0)
+        // 10以下のものは含めない
+        const atas = wbfCalc
+          .map(v => v.reduce((x,y) => x+= y, 0))
+          .reduce( (a,x)=> a += (x>10 ? x : 0), 0)
         const tas = wbfDiff.reduce((a,x)=> a+=x, 0)
+        // 総トラッキング力(ATAS)の表示
         console.log(`\n=> ATAS: ${atas} (${tas})`.red)
         // テキストファイルにログを書き込む
         const point = `${atas} ${mySpace(7, String(atas))} ${tas} ${mySpace(8, String(tas))}`
