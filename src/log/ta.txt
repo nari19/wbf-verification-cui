@@ -6,3 +6,5 @@
 18.5    mc.yandex.ru/metrika/watch.js
 18.5    mc.yandex.ru/metrika/watch.js
 95      yummy.consumable.com/3384/cnsmbl-audio-728x90-slider/widget/iframe.js?cb=1513273960053
+84.75    50.5      cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/2.1.4/fingerprint2.min.js
+82.25    75.5      cdnjs.cloudflare.com/ajax/libs/ClientJS/0.1.11/client.min.js
