@@ -26,14 +26,15 @@ console.log(startLog.gray);
         if(err) throw err;
         console.log(`\n  ATAS  | ${repeatStr(20," ")} URL`)
         console.log(repeatStr(80,"~"))
-        data.split("\n").slice(0,-1).forEach( (v,i) => {
-          let vs = v.split(" ")
-          let pt = ` ${vs[0]}`
-          let sp = repeatStr((7-vs[0].length)," ")
+        data.split("\n").slice(0,-1).forEach( v => {
+          const space = n => repeatStr((8-vs[n].length)," ")
+          let vs = v.split(" ").filter(x => x)
+          let pt1 = ` ${vs[0]}`
+          let pt2 = `(${vs[1]})`
           process.stdout.write(
-            vs[0]>=40 ? pt.red : (vs[0]>=10 ? pt.green : pt.cyan)
+            vs[0]>=40 ? pt1.red : (vs[0]>=10 ? pt1.green : pt1.cyan)
           )
-          process.stdout.write( sp + "|  ")
+          process.stdout.write( space(0) + pt2 + space(1) + "|  ")
           console.log(vs.slice(-1)[0].slice(0, 70))
         })
       })
