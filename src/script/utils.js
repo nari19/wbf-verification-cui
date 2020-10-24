@@ -16,4 +16,4 @@ exports.readUserInput = question => {
 // ----------- 指定した数だけ文字列を繰り返す ----------- 
 exports.repeatStr = (num, str) => {
   return [...Array(num)].map(()=>`${str}`).join("")
-} 
+}

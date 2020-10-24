@@ -2,7 +2,7 @@
 //  ----------- TAを求め、ログの書き込みを行う ----------- 
 exports.getWbfDetails = (links, weight, target, savePath) => {
   const request = require('request-promise')
-  const wbfProperty = require('./_data').wbfProperty2
+  const wbfProperty = require('./_data').wbfProperty
   const fs = require("fs").promises
   const wbfCalc = []
 
@@ -42,6 +42,7 @@ exports.getWbfDetails = (links, weight, target, savePath) => {
       console.log(`[TA: ${sumTA}]`.cyan)
     }).catch( err => console.error(err) )
 
+    // ループ最後
     if(links.slice(-1)[0] == links[_i]) {
       setTimeout(()=>{
         // 総トラッキング力(ATAS)の表示

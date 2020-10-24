@@ -9,7 +9,7 @@ const readUserInput = utils.readUserInput;
 const repeatStr = utils.repeatStr;
 
 const absPath = "/Users/nari19/Downloads/remote-folda/others/wbf-verification-cui";
-const savePath = absPath + "/src/assets/log2.txt";
+const savePath = absPath + "/src/assets/log.txt";
 const startLog = "( URL / a,b,c... / 'log' / 'sort' / 'js' / 'exit' )"
 const weight = 0.75;
 
