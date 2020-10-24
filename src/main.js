@@ -4,6 +4,7 @@ const linkList = require('./_data').linkList;
 
 const getWbfLists = require("./script/getLists").getWbfLists;
 const getWbfDetails = require("./script/getDetails").getWbfDetails;
+const binaryClass = require("./script/binaryClass").output;
 const utils = require("./script/utils")
 const readUserInput = utils.readUserInput;
 const repeatStr = utils.repeatStr;
@@ -11,7 +12,7 @@ const repeatStr = utils.repeatStr;
 const absPath = "/Users/nari19/Downloads/remote-folda/others/wbf-verification-cui";
 const savePath_atas = absPath + "/src/log/atas.txt";
 const savePath_ta = absPath + "/src/log/ta.txt";
-const startLog = "( URL / a,b,c... / 'log' / 'sort' / 'js' / 'exit' )"
+const startLog = "( URL / a,b,c... / 'log' / 'calc' / 'sort' / 'js' / 'exit' )"
 const weight = 0.75;
 
 
@@ -24,13 +25,14 @@ console.log(startLog.gray);
     if(input=="log") {
       fs.readFile( savePath_atas, "utf-8", (err, data) => {
         if(err) throw err;
-        console.log(`\n  ATAS  | ${repeatStr(20," ")} URL`)
+        process.stdout.write(`\n ${repeatStr(5," ")} ATAS ${repeatStr(6," ")} `)
+        console.log(`| ${repeatStr(20," ")} URL`)
         console.log(repeatStr(80,"~"))
         data.split("\n").slice(0,-1).forEach( v => {
-          const space = n => repeatStr((8-vs[n].length)," ")
           let vs = v.split(" ").filter(x => x)
           let pt1 = ` ${vs[0]}`
           let pt2 = `(${vs[1]})`
+          const space = n => repeatStr((8-vs[n].length)," ")
           process.stdout.write(
             vs[0]>=40 ? pt1.red : (vs[0]>=10 ? pt1.green : pt1.cyan)
           )
@@ -71,6 +73,9 @@ console.log(startLog.gray);
       })
       getWbfDetails([input_js], weight, "", savePath_ta)
     
+    //  ----------- 二値分類 ----------- 
+    } else if(input=="calc") {
+      binaryClass()
     //  ----------- Enter => ----------- 
     } else if(input=="") {
       console.log(repeatStr(50,">"))
