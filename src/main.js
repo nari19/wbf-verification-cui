@@ -17,10 +17,13 @@ const savePath_ta = absPath + "/src/log/ta.txt";
 const startLog = "( URL / a,b,c... / 'log' / 'calc' / 'sort' / 'js' / 'exit' )"
 
 const threshold = {
-    tracker: { fingerprintjs: [84.75, 50,5], clientjs: [82.25, 75.5]},
-    weight: 0.75,
-    low: 10,  
-    high: 70  
+  tracker: { 
+    fingerprintjs: {h: 50.5, n: 84.75},
+    clientjs: {h: 75.5, n:82.25}
+  },
+  weight: 0.75,
+  low: 10,  
+  high: {h: 40, n: 70}  
 }
 
 
@@ -29,7 +32,7 @@ console.log(startLog.gray);
   while (true) {
     let input = await readUserInput('');
 
-    if(input=="") { console.log( repeatStr(50,">")+'\n'+startLog.grey ); }//  => Enter
+    if(input=="") { console.log( repeatStr(50,">")+'\n'+startLog.gray ); }//  => Enter
     else if(input=="log") { showLog(savePath_atas) }  // logの表示
     else if(input=="sort") { sortLog(savePath_atas) } // ソート・重複削除
     else if(input=="calc") { binaryClass(savePath_atas, threshold) } // 二値分類
@@ -44,7 +47,7 @@ console.log(startLog.gray);
           return true
         }
       })
-      getWbfDetails([input_js], threshold["weight"], "", savePath_ta)
+      getWbfDetails([input_js], threshold, "", savePath_ta)
     
     // ------------- WBF探索 -------------
     } else {
@@ -52,7 +55,7 @@ console.log(startLog.gray);
       if(target.slice(0,4)!="http") target = "http://" + target
       getWbfLists(target).then( links => {
         if(links.length){
-          getWbfDetails(links, threshold["weight"], target, savePath_atas)
+          getWbfDetails(links, threshold, target, savePath_atas)
         } else {
           console.log('=> 3rd-party script is not found.'.red)
         }

@@ -1,6 +1,6 @@
 
 //  ----------- TAを求め、ログの書き込みを行う ----------- 
-exports.getWbfDetails = (links, weight, target, savePath) => {
+exports.getWbfDetails = (links, threshold, target, savePath) => {
   const request = require('request-promise')
   const fs = require("fs").promises
   const oldProps = require('../_data').oldProps
@@ -41,7 +41,7 @@ exports.getWbfDetails = (links, weight, target, savePath) => {
     await request("http://"+link).then( code => {
       console.log(`\n--- ${link.slice(0, link.indexOf("/"))} ---`.green)
       // WBF探索
-      showWbfDetails(code.split(/;|\n/), weight)
+      showWbfDetails(code.split(/;|\n/), threshold["weight"])
       // 出力: TA
       let sumTA = wbfCalc.slice(-1)[0].reduce((a,x) => a+=x, 0)
       if(sumTA > 20) console.log(link.gray)
@@ -54,7 +54,7 @@ exports.getWbfDetails = (links, weight, target, savePath) => {
         // 10以下のものは含めない
         const atas = wbfCalc
           .map(v => v.reduce((x,y) => x+= y, 0))
-          .reduce( (a,x)=> a += (x>10 ? x : 0), 0)
+          .reduce( (a,x)=> a += (x>threshold["low"] ? x : 0), 0)
         const tas = wbfDiff.reduce((a,x)=> a+=x, 0)
         // 総トラッキング力(ATAS)の表示
         console.log(`\n=> ATAS: ${atas} (${tas})`.red)
