@@ -3,9 +3,9 @@ const linkList = require('./_data').linkList;
 
 const getWbfLists = require("./script/getLists").getWbfLists;
 const getWbfDetails = require("./script/getDetails").getWbfDetails;
-const binaryClass = require("./script/func/calc").main;
-const showLog = require("./script/func/log").main;
-const sortLog = require("./script/func/sort").main;
+const calcFunc = require("./script/func/calc").main;
+const showFunc = require("./script/func/log").main;
+const sortFunc = require("./script/func/sort").main;
 
 const utils = require("./script/utils")
 const readUserInput = utils.readUserInput;
@@ -21,9 +21,9 @@ const threshold = {
     fingerprintjs: {h: 50.5, n: 84.75},
     clientjs: {h: 75.5, n:82.25}
   },
-  weight: 0.75,
-  low: 10,  
-  high: {h: 40, n: 70}  
+  high: {h: 35, n: 69.25},  
+  low: 10,
+  weight: 0.75
 }
 
 
@@ -33,10 +33,10 @@ console.log(startLog.gray);
     let input = await readUserInput('');
 
     if(input=="") { console.log( repeatStr(50,">")+'\n'+startLog.gray ); }//  => Enter
-    else if(input=="log") { showLog(savePath_atas) }  // logの表示
-    else if(input=="sort") { sortLog(savePath_atas) } // ソート・重複削除
-    else if(input=="calc") { binaryClass(savePath_atas, threshold) } // 二値分類
-    else if(input=="exit") { console.log("Bye! :)".green);break; } // 終了
+    else if(input=="log") { showFunc(savePath_atas) }  // logの表示
+    else if(input=="sort") { sortFunc(savePath_atas) } // ソート・重複削除
+    else if(input=="calc") { calcFunc(savePath_atas, threshold) } // 二値分類
+    else if(input=="exit") { console.log("Bye! :)".green); break; } // 終了
 
     // ------------- スクリプトファイルを直接調べる -------------
     else if(input=="js") {

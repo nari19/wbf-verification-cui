@@ -28,18 +28,24 @@ exports.main = (savePath_atas, threshold) => {
         cntUp(z, power >= high[z] ? "FP" : "TN")
         cntUp(z, power+trFin[z] >= high[z] ? "TP" : "FN")
         cntUp(z, power+trCli[z] >= high[z] ? "TP" : "FN")
-        // [FP]の時だけリンク表示
-        if (power >= high[z] && z=="n") console.log(`${v[2]}`.gray)
+        // [False]の時だけリンク表示
+        if (power >= high[z] && z=="n") console.log(`FP: ${vs[2]}`.gray)
+        if (power+trFin[z] < high[z] && z=="n") console.log(`FN: ${vs[2]}`.gray)
+        if (power+trCli[z] < high[z] && z=="n") console.log(`FN: ${vs[2]}`.gray)
       })
     });
 
     // 出力
+    console.log("\nサイト数: " + `${data.split('\n').slice(0, -1).length}`.cyan);
+    console.log("データ数: " + `${Object.values(result["n"]).reduce((a,x) => a += x, 0)}`.cyan);
     ["h", "n"].forEach( z => {
-      console.log('\n' + "[関連研究]")
+      console.log('\n' + (z=="h" ? "[関連研究]" : "[提案]") )
+      console.log(` (Positive >= ` + `${high[z]})`.cyan)
+      process.stdout.write(` `)
       console.log(result[z])
-      console.log("再現率: " + `${Recall(z)}`.green)
-      console.log("適合率: " + `${Precision(z)}`.green)
-      console.log(" f値  : " + `${fValue(z)}`.green)
+      console.log(" 再現率: " + `${Recall(z)}`.green)
+      console.log(" 適合率: " + `${String(Precision(z)).slice(0,5)}`.green)
+      console.log("  f値  : " + `${String(fValue(z)).slice(0,5)}`.green)
     })
 
   })

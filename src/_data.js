@@ -1,5 +1,5 @@
 exports.linkList = {
-  a: 'https://peraichi.com/univ/%E3%82%A2%E3%83%95%E3%82%A3%E3%83%AA%E3%82%A8%E3%82%A4%E3%83%88%E3%81%AE%E5%A7%8B%E3%82%81%E6%96%B9%E3%82%84%E7%A8%BC%E3%81%8E%E6%96%B9%E3%80%81%E7%84%A1%E6%96%99%E3%83%96%E3%83%AD%E3%82%B0%E3%82%84',
+  a: 'http://tokasaiyasune.blog.fc2.com/',
   b: 'https://tenki.jp/suppl/emi_iwaki/2015/07/26/5521.html',
   c: 'http://recruit.net',
   d: 'https://maku77.github.io/nodejs/io/readline-from-keyboard.html',

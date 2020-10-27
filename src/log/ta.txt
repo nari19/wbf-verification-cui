@@ -9,3 +9,6 @@
 54.75    47.75     mc.yandex.ru/metrika/watch.js
 95       67.5      yummy.consumable.com/3384/cnsmbl-audio-728x90-slider/widget/iframe.js?cb=1513273960053
 21.5     11        flux-cdn.com/client/smartlog/flux_smartlog_HB.min.js
+56.5     49        cdn.blog.st-hatena.com/js/hatenablog.js?version=48f9a62022a418c014bcdc7b165e167d11de4c99&env=production
+83.75    44.5      www.mentwo.com/res/touch011/js/pack/ocnk-min.js?1575352997
+49.25    28.25     js-cdn.music.apple.com/musickit/v2/amp/musickit.js?t=1603144220247
