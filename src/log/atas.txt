@@ -144,3 +144,6 @@
 0        6         http://www.benri.com/record/link_jump.php?link_page_no=556
 0        13.5      http://www.benri.com/record/link_jump.php?link_page_no=408
 0        3         http://www.benri.com/record/link_jump.php?link_page_no=2515
+107.25   239.25    https://blog.with2.net/out.php?1986809;https%3A%2F%2Fexo-loving-ekkyon.hatenablog.jp
+83.75    51.75     http://www.benri.com/record/link_jump.php?link_page_no=1954
+26.25    52.75     http://www.sciweavers.org/free-online-latex-equation-editor
