@@ -33,7 +33,7 @@ console.log(startLog.gray);
     let input = await readUserInput('');
 
     if(input=="") { console.log( repeatStr(50,">")+'\n'+startLog.gray ); }//  => Enter
-    else if(input=="log") { showFunc(savePath_atas) }  // logの表示
+    else if(input=="log") { showFunc(savePath_atas, threshold) }  // logの表示
     else if(input=="sort") { sortFunc(savePath_atas) } // ソート・重複削除
     else if(input=="calc") { calcFunc(savePath_atas, threshold) } // 二値分類
     else if(input=="exit") { console.log("Bye! :)".green); break; } // 終了
