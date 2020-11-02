@@ -35,6 +35,7 @@
 13.5     66        https://blog.with2.net/out.php?303437;http%3A%2F%2Fdaijyoyuukoharu.blog62.fc2.com%2F
 13.5     58.5      https://blog.with2.net/out.php?125601;http%3A%2F%2Fhatchannikki.blog107.fc2.com%2F
 13.5     26.75     https://blog.with2.net/out.php?547633;https%3A%2F%2Fchloebisu.com
+13.5     13.5      https://blog.with2.net/out.php?977741;http%3A%2F%2Fproshoptom.blog66.fc2.com%2F
 13       14.5      https://blog.with2.net/out.php?2026797;https%3A%2F%2Fitips.krsw.biz%2F
 12.25    21.5      https://bestcarweb.jp/usedcar/97397
 12.25    11        https://turusube.net/ranto-akane/
@@ -49,6 +50,7 @@
 11.5     25        https://maku77.github.io/nodejs/io/readline-from-keyboard.html
 11.25    31        http://blog.livedoor.jp/tokkataro/
 11.25    13        https://blog.with2.net/out.php?1436453;https%3A%2F%2Fwww.spacebrothers.jp%2F
+11.25    14        https://blog.with2.net/out.php?1803980;https%3A%2F%2Fhoimiso.xsrv.jp%2F
 10.5     10        https://www.cyberagent.co.jp/
 10.25    10.25     http://hikaku.com
 10.25    24.75     https://blog.with2.net/out.php?1960410;https%3A%2F%2Fruiz1996.com%2F
@@ -189,3 +191,11 @@
 0        4.5       https://blog.with2.net/out.php?1902629;https%3A%2F%2Fjrauma.hatenablog.com
 0        7         https://blog.with2.net/out.php?2049222;https%3A%2F%2Ftennkatouitu.blogspot.com
 0        19.25     https://blog.with2.net/out.php?1941447;http%3A%2F%2Fblog.livedoor.jp%2Fkingofdirt%2F
+0        8.5       https://blog.with2.net/out.php?665045;http%3A%2F%2Fblog.reira-sports.com%2F
+0        4.5       https://blog.with2.net/out.php?912965;https%3A%2F%2Fk9352009.hatenablog.com%2F
+0        26.5      https://blog.with2.net/out.php?1892603;https%3A%2F%2Fs-togawa.blog.ss-blog.jp%2F
+0        4.5       https://blog.with2.net/out.php?1659001;http%3A%2F%2Fblog.goo.ne.jp%2F1tetsusoukon
+0        0         https://blog.with2.net/out.php?352011;http%3A%2F%2Fbphkkokura.exblog.jp%2F
+0        19        https://blog.with2.net/out.php?1924554;http%3A%2F%2Fwww.pekepekepeke.com%2F
+0        11.75     https://blog.with2.net/out.php?1827227;http%3A%2F%2Fmiyabikun.blog.jp%2F
+0        10        https://blog.with2.net/out.php?1149970;http%3A%2F%2Fameblo.jp%2Fcar-freak%2F
