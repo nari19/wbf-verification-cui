@@ -16,9 +16,11 @@ exports.main = (savePath_atas, threshold) => {
       let pt1 = ` ${vs[0]}`
       let pt2 = `${vs[1]}`
       const space = n => repeatStr((8-vs[n].length)," ")
-      const atasStr = vs[0]>=high["n"] ? pt1.red : (vs[0]>=10 ? pt1.green : pt1.cyan)
-      process.stdout.write( atasStr + space(0))
-      process.stdout.write( (vs[1]>=high["h"] ? pt2.red : pt2.green) + space(1))
+      const clr = (high, pt, v) => {
+        return v>=high ? pt.red : (v!=0 ? pt.green : pt.cyan)
+      }
+      process.stdout.write( clr(high["n"], pt1, vs[0]) + space(0) )
+      process.stdout.write( clr(high["h"], pt2, vs[1]) + space(1) )
       console.log( "|  " + vs.slice(-1)[0].slice(0, 50) )
     })
   })
