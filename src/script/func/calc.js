@@ -29,9 +29,9 @@ exports.main = (savePath_atas, threshold) => {
         cntUp(z, power+trFin[z] >= high[z] ? "TP" : "FN")
         cntUp(z, power+trCli[z] >= high[z] ? "TP" : "FN")
         // [False]の時だけリンク表示
-        if (power >= high[z] && z=="h") console.log(`FP: ${vs[2]}`.gray)
-        if (power+trFin[z] < high[z] && z=="h") console.log(`FN: ${vs[2]}`.gray)
-        if (power+trCli[z] < high[z] && z=="h") console.log(`FN: ${vs[2]}`.gray)
+        if (power >= high[z] && z=="n") console.log(`FP: ${vs[2]}`.gray)
+        if (power+trFin[z] < high[z] && z=="n") console.log(`FN: ${vs[2]}`.gray)
+        if (power+trCli[z] < high[z] && z=="n") console.log(`FN: ${vs[2]}`.gray)
       })
     });
 

@@ -17,6 +17,7 @@
 22.5     22.25     https://blog.with2.net/out.php?133982;http%3A%2F%2Fblog.919.BZ%2F
 22.5     28.5      https://blog.with2.net/out.php?2043918;https%3A%2F%2Fpecorino.work%2F
 22.5     19.25     http://www.benri.com/record/link_jump.php?link_page_no=610
+22.5     23.75     https://blog.with2.net/out.php?394237;http%3A%2F%2Fblog.livedoor.jp%2Fkokorononayami%2F
 22       30.75     https://blog.with2.net/out.php?535599;http%3A%2F%2Fkeywordjiten.seesaa.net%2F
 21.5     18.5      https://smartlog.jp/44862
 19.75    26.5      https://github.com/fingerprintjs/fingerprintjs
@@ -29,6 +30,9 @@
 13.5     36        https://blog.with2.net/out.php?996302;http%3A%2F%2Fyukokulog.blog129.fc2.com%2F
 13.5     33        https://blog.with2.net/out.php?624624;http%3A%2F%2Fkkmyo.blog70.fc2.com%2F
 13.5     20.75     https://blog.with2.net/out.php?463796;http%3A%2F%2Fkotobukibune.at.webry.info%2F
+13.5     66        https://blog.with2.net/out.php?303437;http%3A%2F%2Fdaijyoyuukoharu.blog62.fc2.com%2F
+13.5     58.5      https://blog.with2.net/out.php?125601;http%3A%2F%2Fhatchannikki.blog107.fc2.com%2F
+13.5     26.75     https://blog.with2.net/out.php?547633;https%3A%2F%2Fchloebisu.com
 13       14.5      https://blog.with2.net/out.php?2026797;https%3A%2F%2Fitips.krsw.biz%2F
 12.25    21.5      https://bestcarweb.jp/usedcar/97397
 12.25    11        https://turusube.net/ranto-akane/
@@ -145,3 +149,18 @@
 0        6         http://www.benri.com/record/link_jump.php?link_page_no=556
 0        13.5      http://www.benri.com/record/link_jump.php?link_page_no=408
 0        3         http://www.benri.com/record/link_jump.php?link_page_no=2515
+0        1.5       https://blog.with2.net/out.php?953544;http%3A%2F%2Fblog.drnagao.com
+0        10        https://blog.with2.net/out.php?2052585;https%3A%2F%2Fameblo.jp%2Fmacb2b37%2F
+0        8.75      https://blog.with2.net/out.php?1712313;http%3A%2F%2Fshindenforest.blog.jp%2F
+0        10        https://blog.with2.net/out.php?1223876;http%3A%2F%2Fameblo.jp%2Fbiyouhealing%2F
+0        10        https://blog.with2.net/out.php?2015686;https%3A%2F%2Fameblo.jp%2Fcelestialgrace
+0        10        https://blog.with2.net/out.php?1683543;https%3A%2F%2Fameblo.jp%2Fkey2009man
+0        0         https://blog.with2.net/out.php?941320;http%3A%2F%2Fnekokichij.exblog.jp%2F
+0        22.5      https://blog.with2.net/out.php?610387;http%3A%2F%2Fsatukilight.blog.fc2.com%2F
+0        10        https://blog.with2.net/out.php?367229;http%3A%2F%2Fameblo.jp%2Fsauta19%2F
+0        22.25     https://blog.with2.net/out.php?237262;http%3A%2F%2Fumanyan.blog.jp%2F
+0        34.5      https://blog.with2.net/out.php?1586472;http%3A%2F%2Fsueko4.blog79.fc2.com%2F
+0        4.5       https://blog.with2.net/out.php?480115;http%3A%2F%2Fblog.goo.ne.jp%2Fkuru0214%2F
+0        4.5       https://blog.with2.net/out.php?337485;http%3A%2F%2Fblog.goo.ne.jp%2Fmamejiro040411
+0        9         https://blog.with2.net/out.php?82845;http%3A%2F%2Fblog.livedoor.jp%2Fsky2525%2F
+0        10        https://blog.with2.net/out.php?1840634;http%3A%2F%2Fameblo.jp%2Fpecojapan
