@@ -62,7 +62,7 @@ exports.getWbfDetails = (links, threshold, target, savePath) => {
         const point = `${atas} ${mySpace(7, String(atas))} ${tas} ${mySpace(8, String(tas))}`
         const textLog = target ? `${point} ${target}\n` : `${point} ${link}\n`
         fs.appendFile( savePath, textLog)
-      }, 1000)
+      }, 1500)
     }
   })
 
