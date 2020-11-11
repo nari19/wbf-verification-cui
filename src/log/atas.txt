@@ -1,5 +1,4 @@
 107.25   230.25    https://blog.with2.net/out.php?1986809;https%3A%2F%2Fexo-loving-ekkyon.hatenablog.jp
-107.25   239.25    https://blog.with2.net/out.php?1986809;https%3A%2F%2Fexo-loving-ekkyon.hatenablog.jp
 97       61.5      https://blog.with2.net/out.php?2034931;https%3A%2F%2Fjikukenkyu.com
 83.75    51.75     http://www.benri.com/record/link_jump.php?link_page_no=1954
 78.75    51.25     https://shopping.yahoo.co.jp/
@@ -139,7 +138,6 @@
 0        11.75     https://blog.with2.net/out.php?1722012;http%3A%2F%2Fpenta5404.blog.jp%2F
 0        6         http://www.benri.com/record/link_jump.php?link_page_no=20
 0        4.5       http://www.benri.com/record/link_jump.php?link_page_no=74
-0        0         http://www.benri.com/record/link_jump.php?link_page_no=2388
 0        8.75      http://www.benri.com/record/link_jump.php?link_page_no=911
 0        7         http://www.benri.com/record/link_jump.php?link_page_no=1219
 0        7.25      http://www.benri.com/record/link_jump.php?link_page_no=1953
@@ -199,3 +197,4 @@
 0        19        https://blog.with2.net/out.php?1924554;http%3A%2F%2Fwww.pekepekepeke.com%2F
 0        11.75     https://blog.with2.net/out.php?1827227;http%3A%2F%2Fmiyabikun.blog.jp%2F
 0        10        https://blog.with2.net/out.php?1149970;http%3A%2F%2Fameblo.jp%2Fcar-freak%2F
+0        0         https://drafts.csswg.org/css-grid-3/#masonry-layout
