@@ -39,7 +39,8 @@ exports.getWbfDetails = (links, threshold, target, savePath) => {
   links.forEach( async (link, _i) => {
     // 3rd-Party上のスクリプトファイルを取得
     await request("http://"+link).then( code => {
-      console.log(`\n--- ${link.slice(0, link.indexOf("/"))} ---`.green)
+      // console.log(`\n--- ${link.slice(0, link.indexOf("/"))} ---`.green)
+      console.log(`\n--- ${link} ---`.green)
       // WBF探索
       showWbfDetails(code.split(/;|\n/), threshold["weight"])
       // 出力: TA

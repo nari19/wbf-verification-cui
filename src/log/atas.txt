@@ -25,6 +25,7 @@
 18.5     14        https://arne.media/news/22792/
 16.5     10.25     http://news.yahoo.co.jp/
 16.5     10.25     http://www.benri.com/record/link_jump.php?link_page_no=77
+15.25    10.25     https://news.yahoo.co.jp/
 13.5     199.5     http://webtokubai.blog91.fc2.com/
 13.5     13.5      https://blog.with2.net/out.php?2046616;http%3A%2F%2Fniwaasobi.blog.fc2.com%2F
 13.5     13.5      https://blog.with2.net/out.php?1116287;http%3A%2F%2Fhyougara8210.blog137.fc2.com%2F
@@ -65,14 +66,12 @@
 0        11.5      https://bestpresent.jp/ties/ties_armani/
 0        10.25     https://wired.jp/2020/05/06/which-macbook-should-you-buy/
 0        12        https://www.kagoya.jp/howto/webhomepage/affiliate-01/
-0        3         https://www.bloomberg.co.jp/news/articles/2020-08-28/QFRWU8T1UM1O01
 0        11.5      https://ec-growth-lab.com/listing/20140507/
 0        4.5       https://www.rakuten.co.jp/
 0        6         http://kakaku.com
 0        4.5       http://azraelsmerryland.blogspot.jp/
 0        8.5       https://cycle-japan.com/blogservice/
 0        16        https://blog.kaerucloud.com/entry/blogservice-ranking/
-0        3         https://blog.with2.net/rank1000-0.html
 0        7.5       http://gekiyasutoka.com/
 0        136.5     http://tokkaavgekiyasu.blog107.fc2.com/
 0        3         https://blog.with2.net/out.php?1846;http%3A%2F%2Fbuy.livedoor.biz%2F
@@ -193,10 +192,9 @@
 0        4.5       https://blog.with2.net/out.php?912965;https%3A%2F%2Fk9352009.hatenablog.com%2F
 0        26.5      https://blog.with2.net/out.php?1892603;https%3A%2F%2Fs-togawa.blog.ss-blog.jp%2F
 0        4.5       https://blog.with2.net/out.php?1659001;http%3A%2F%2Fblog.goo.ne.jp%2F1tetsusoukon
-0        0         https://blog.with2.net/out.php?352011;http%3A%2F%2Fbphkkokura.exblog.jp%2F
 0        19        https://blog.with2.net/out.php?1924554;http%3A%2F%2Fwww.pekepekepeke.com%2F
 0        11.75     https://blog.with2.net/out.php?1827227;http%3A%2F%2Fmiyabikun.blog.jp%2F
 0        10        https://blog.with2.net/out.php?1149970;http%3A%2F%2Fameblo.jp%2Fcar-freak%2F
-0        0         https://drafts.csswg.org/css-grid-3/#masonry-layout
 0        32.75     https://kotowaza.jitenon.jp/kotowaza/4281.php#:~:text=%E7%88%B6%E6%AF%8D%E3%81%8B%E3%82%89%E5%8F%97%E3%81%91%E3%81%9F%E6%81%A9,%E3%82%82%E6%B7%B1%E3%81%97%E3%80%8D%E3%81%A8%E3%82%82%E3%81%84%E3%81%86%E3%80%82
 0        6         https://mdpr.jp/beauty/detail/1719602
+0        4.5       http://azraelsmerryland.blogspot.jp
