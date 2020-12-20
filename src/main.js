@@ -21,7 +21,7 @@ const threshold = {
     fingerprintjs: {h: 50.5, n: 84.75},
     clientjs: {h: 75.5, n:82.25}
   },
-  high: {h: 35, n: 69.25},  
+  high: {h: 35.5, n: 69.25},
   low: 10,
   weight: 0.75
 }

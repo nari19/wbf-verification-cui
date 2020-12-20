@@ -15,3 +15,4 @@
 47.25    24.25     app-eu.trustev.com/api/v2.0/TrustevJS?key=8c369e57ce58480ea01c714343b1f4e5
 0        0         app.trustev.com/api/v2.0/TrustevJS?key=1fa4207573dd4d95be5bd2241ee09194
 0        8.5       azraelsmerryland.blogspot.jp/
+11.25    6         pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
